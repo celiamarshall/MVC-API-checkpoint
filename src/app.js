@@ -11,7 +11,7 @@ const routes = require('./routes/elephants')
 app.use('/elephants', routes)
 
 app.use((err, req, res, next) => {
-    res.status(err.status).json({ error: err })
+    res.status(err.status).json(err)
 })
 
 app.use((req, res, next) => {
