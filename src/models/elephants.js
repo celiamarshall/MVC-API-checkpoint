@@ -1,0 +1,2 @@
+const elephants = require('../database')
+
