@@ -9,7 +9,7 @@ function getOne(id) {
     const errors = []
     let response
 
-    const elephantWithId = elephants.find (elephant => elephant.id === id)
+    const elephantWithId = elephants.find(elephant => elephant.id === id)
 
     if (!elephantWithId) {
         errors.push('Elephant not found')
@@ -22,7 +22,7 @@ function getOne(id) {
     return response
 }
 
-function create ({ species, habitat, endangered }) {
+function create({ species, habitat, endangered }) {
     const errors = []
     let response
 
@@ -54,14 +54,14 @@ function create ({ species, habitat, endangered }) {
     }
 
     return response
-} 
+}
 
-function update (id, { species, habitat, endangered }) {
+function update(id, { species, habitat, endangered }) {
     const errors404 = []
     const errors400 = []
     let response
 
-    const elephantWithId = elephants.find (elephant => elephant.id === id)
+    const elephantWithId = elephants.find(elephant => elephant.id === id)
 
     if (!elephantWithId) {
         errors404.push('Elephant not found')
@@ -74,7 +74,7 @@ function update (id, { species, habitat, endangered }) {
     }
 
     if (species) {
-        if(typeof species === 'string') {
+        if (typeof species === 'string') {
             elephantWithId.species = species
             response = elephantWithId
         }
@@ -85,7 +85,7 @@ function update (id, { species, habitat, endangered }) {
     }
 
     if (habitat) {
-        if(typeof habitat === 'string') {
+        if (typeof habitat === 'string') {
             elephantWithId.habitat = habitat
             response = elephantWithId
         }
@@ -117,7 +117,7 @@ function remove(id) {
     const errors = []
     let response
 
-    const elephantWithId = elephants.find (elephant => elephant.id === id)
+    const elephantWithId = elephants.find(elephant => elephant.id === id)
 
     if (!elephantWithId) {
         errors.push('Elephant not found')
